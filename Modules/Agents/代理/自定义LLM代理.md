@@ -134,11 +134,14 @@ class CustomOutputParser(AgentOutputParser):
         # Return the action and action input
         return AgentAction(tool=action, tool_input=action_input.strip(" ").strip('"'), log=llm_output)
 ```
+```python
+output_parser = CustomOutputParser()
+```
 
 ## 设置LLM
 选择您想要使用的LLM！
 ```python
-output_parser = CustomOutputParser()
+llm = OpenAI(temperature=0)
 ```
 
 ## 定义停止顺序
